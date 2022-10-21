@@ -10,6 +10,6 @@
 using namespace std;
 
 bool checkTie(vector<vector<CellType>> gameGrid);
-bool checkWinner (const vector<vector<CellType>>& gameGrid);
+bool checkWinner (const vector<vector<CellType>> gameGrid);
 
 #endif //MANDELBROT_GAMEENDEDVERIFICATION_H

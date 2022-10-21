@@ -10,7 +10,7 @@
 #include <string>
 using namespace std;
 
-void addPiece(vector<vector<CellType>>& gameGrid, int colonneIndex, CellType type);
+void addPiece(vector<vector<CellType>>& gameGrid, int columnIndex, CellType type);
 void switchPlayerTurn(CellType& currentPlayerTurn);
 void gameStart();
 #endif //MANDELBROT_GAMELOGIC_H

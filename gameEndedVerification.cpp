@@ -1,15 +1,20 @@
-//
-// Created by Emuye Dessasa on 20.10.2022.
-//
+/*
+ * Fichier : gameEndedVerification.cpp
+ * Autheur : Emuye Dessasa, Boris Hutzli
+ * Date    : 20.10.22
+ *
+ * But     : Fichier contenant les fonctions concernant la vérification de la partie terminée
+ */
 
 #include "cellType.h"
 #include <vector>
 using namespace std;
 
+// Quantité de pion aligné nécessaire pour qu'un joueur gagne
 const int WIN_COUNT = 4;
 
-
-bool checkWinner (const vector<vector<CellType>>& gameGrid) {
+// Vérifie si un joueur a gangé
+bool checkWinner (const vector<vector<CellType>> gameGrid) {
     for (int y = 0; y < gameGrid.size(); y++) {
         for (int x = 0; x < gameGrid[0].size(); x++) {
             bool won = true;
@@ -87,12 +92,14 @@ bool checkWinner (const vector<vector<CellType>>& gameGrid) {
             }
 
             if (won) {
-                return true;
+                return won;
             }
         }
     }
     return false;
 }
+
+// Vérifie s'il y a une égalité
 bool checkTie(vector<vector<CellType>> gameGrid) {
     for (int y = 0; y < gameGrid.size(); y++) {
         for (int x = 0; x < gameGrid[0].size(); x++) {

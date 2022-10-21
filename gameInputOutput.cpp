@@ -1,6 +1,10 @@
-//
-// Created by Emuye Dessasa on 20.10.2022.
-//
+/*
+ * Fichier : gameInputOutput.cpp
+ * Autheur : Emuye Dessasa, Boris Hutzli
+ * Date    : 20.10.22
+ *
+ * But     : Fichier contenant les fonctions concernant l'affichage et la saisie pour le jeu
+ */
 
 #include "cellType.h"
 #include <string>
@@ -8,13 +12,21 @@
 #include <iostream>
 using namespace std;
 
+const string PLAYER_ONE_NAME = "Joueur 1";
+const string PLAYER_TWO_NAME = "Joueur 2";
+const char PLAYER_ONE_CHAR = '1';
+const char PLAYER_TWO_CHAR = '2';
+
+// Retourne le charactère représentant le pion des joueurs
 char getPlayerChar(CellType player){
     switch(player){
-        case PLAYER_ONE: return '1';
-        case PLAYER_TWO: return '2';
+        case PLAYER_ONE: return PLAYER_ONE_CHAR;
+        case PLAYER_TWO: return PLAYER_TWO_CHAR;
         default : return ' ';
     }
 }
+
+// Affiche les règles du jeu
 void displayRules(){
 
     cout << "--------------" << endl;
@@ -27,12 +39,16 @@ void displayRules(){
             << "Si, toutes les cases sont remplies et qu'il n'y a aucun alignement" << endl
             << "la partie est declaree nulle." << endl << endl;
 }
+
+// Retourne le nom des joueurs
 string getPlayerName(CellType player){
     switch(player){
-        case PLAYER_ONE : return "Joueur 1";
-        case PLAYER_TWO : return "Joueur 2";
+        case PLAYER_ONE : return PLAYER_ONE_NAME;
+        case PLAYER_TWO : return PLAYER_TWO_NAME;
     }
 }
+
+// Affiche la grille du jeu
 void display(vector<vector<CellType>> gameGrid){
     for(int c = 0; c < gameGrid[0].size(); c++){
         cout << "  " << c << " ";
@@ -52,6 +68,8 @@ void display(vector<vector<CellType>> gameGrid){
     }
     cout << endl;
 }
+
+// Saisie d'une valeur int de l'utilisateur
 int getUserIntInput(int min, int max, string message) {
     int input;
     do {
